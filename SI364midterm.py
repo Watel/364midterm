@@ -81,6 +81,7 @@ class CourseForm(FlaskForm):
     course2 = StringField("Please enter the second course you are taking (i.e. SI364):", validators=[Required(), Length(min=5)])
     submit = SubmitField()
 
+    #Validation function structure pulled from HW3
     def validate_studentid(self,field):
         if len(str(field.data)) < 8 and field.data is not int:
             raise ValidationError("Please enter 8 integers.")
@@ -88,6 +89,8 @@ class CourseForm(FlaskForm):
             raise ValidationError("Student ID already exists!")
 
 
+#RatingComments is a form that includes a drop down menu of rating scores
+#https://stackoverflow.com/questions/23851664/long-sorted-dropdown-list-with-wtforms
 class RatingComments(FlaskForm):
     RATING_CHOICES = [("1","1"), ("2","2"), ("3","3"), ("4","4"), ("5","5"), ("6","6"), ("7","7"), ("8", "8"), ("9","9"), ("10","10")]
     rating1 = SelectField("please rate your overall experience in your first class (0-lowest, 10-highest)",
@@ -224,6 +227,7 @@ def unique_majors():
             maj_sum += max_rating
         maj_avg = maj_sum / (len(major_student_lst))
 
+        #Add into dictionary major as key and a tuple containing (major count, major average) as value
         major_counts[major] = (Courses.query.filter_by(major=major).count(), maj_avg)
 
 
