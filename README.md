@@ -1,10 +1,12 @@
-Requirements:
+Hi there, this is my SI364 Midterm Assignment.  In a nutshell, it allows students to enter in their basic profile information, then asks them for two courses for them to rate and comment on.  This app then makes a REST API call to determine the sentiment (pos/neg) of each comment!  I also add in the ability to list all the unique majors and their average rating score, as well as the ability to return results for one specific student id.
+
+Code Checklist:
 
 **Ensure that the SI364midterm.py file has all the setup (app.config values, import statements, code to run the app if that file is run, etc) necessary to run the Flask application, and the application runs correctly on http://localhost:5000 (and the other routes you set up)**
 **Add navigation in base.html with links (using a href tags) that lead to every other viewable page in the application. (e.g. in the lecture examples from the Feb 9 lecture, like this )**
 **Ensure that all templates in the application inherit (using template inheritance, with extends) from base.html and include at least one additional block.**
 **Include at least 2 additional template .html files we did not provide.**
-**At least one additional template with a Jinja template for loop and at least one additional template with a Jinja template conditional.
+**At least one additional template with a Jinja template for loop and at least one additional template with a Jinja template conditional.**
     **These could be in the same template, and could be 1 of the 2 additional template files.**
 **At least one errorhandler for a 404 error and a corresponding template.**
 **At least one request to a REST API that is based on data submitted in a WTForm.**
