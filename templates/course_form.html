@@ -1,0 +1,29 @@
+
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <h1>Let's get to know you and the classes you are taking!</h1>
+
+<form action="{{ url_for('rating_form') }}" method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.csrf_token }}
+    {{ form.studentid.label() }}{{ form.studentid() }}<br>
+    {{ form.major.label() }}{{ form.major() }}<br>
+    {{ form.name.label() }}{{ form.name() }}<br>
+    {{ form.course1.label() }}{{ form.course1() }}<br>
+    {{ form.course2.label() }}{{ form.course2() }}<br>
+    {{ form.submit() }}
+</form>
+
+
+<div>
+    {% for message in get_flashed_messages() %}
+        <strong style="color:red;">{{ message }}</strong>
+    {% endfor %}
+</div>
+
+
+{% endblock %}
+
+

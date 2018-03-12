@@ -1,0 +1,23 @@
+
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <h1>{{ name }}!  As an {{ major }} major, tell me how you feel about your classes...</h1>
+
+<form action="{{ url_for('display_data') }}" method="POST">
+    <p>For {{ course1 }}, {{ form.rating1.label() }}  {{ form.rating1() }}</p>
+    <p>For {{ course1 }}, {{ form.comment1.label() }}</p>{{ form.comment1() }}
+    <p>For {{ course2 }}, {{ form.rating2.label() }}  {{ form.rating2() }}</p>
+    <p>For {{ course2 }}, {{ form.comment2.label() }}</p>{{ form.comment2() }}<br>
+
+    {{ form.submit() }}
+    {{ form.hidden_tag() }}
+</form>
+
+
+
+{% endblock %}
+
+

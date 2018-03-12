@@ -1,0 +1,20 @@
+
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <h1>Major Results</h1>
+    <ul>
+    {% for major in majors %}
+        <li><strong>{{ major[0] }}</strong> has <strong>{{ major[1][0] }}</strong> student(s) with an average course rating of <strong>{{ major[1][1] }}</strong>!</li><br><br>
+    {% endfor %}
+
+    </ul>
+
+    {% if not majors %}
+        There are no majors to show!
+    {% endif %}
+
+
+
+{% endblock %}

@@ -1,0 +1,20 @@
+
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h1>Search for an existing entry...</h1>
+
+
+<form action="{{ url_for('search_results') }}" method="GET">
+    <p>{{ form.search.label() }} {{ form.search() }}</p>
+    {{ form.submit() }}
+    {{ form.hidden_tag() }}
+</form>
+
+
+
+
+{% endblock %}
+
+
