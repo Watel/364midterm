@@ -1,6 +1,7 @@
+# Introduction
 Hi there, this is my SI364 Midterm Assignment.  In a nutshell, it allows students to enter in their basic profile information, then asks them for two courses for them to rate and comment on.  This app then makes a REST API call to determine the sentiment (pos/neg) of each comment!  I also add in the ability to list all the unique majors and their average rating score, as well as the ability to return results for one specific student id.
 
-Code Checklist:
+# Code Checklist:
 
 **1. Ensure that the SI364midterm.py file has all the setup (app.config values, import statements, code to run the app if that file is run, etc) necessary to run the Flask application, and the application runs correctly on http://localhost:5000 (and the other routes you set up)**
 
@@ -39,3 +40,14 @@ Code Checklist:
 **17. Include at least one use of url_for. (HINT: This could happen where you render a form...)**
 
 **18. Have at least 3 view functions that are not included with the code we have provided. (But you may have more! Make sure you include ALL view functions in the app in the documentation and ALL pages in the app in the navigation links of base.html.)**
+
+# Routes -> Templates
+1. `/` leads to `course_form.html`
+2. `about` leads to `index.html`
+3. `course_form` leads to `course_form.html`
+4. `rating_form` leads to `rating_form.html` or back to `course_form.html` if validation fails
+5. `display_data` leads to `display_data.html`
+6. `unique_majors` leads to `unique_majors.html`
+7. `search` leads to `search.html`
+8. `search_results` leads to `search_results.html`
+
